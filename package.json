@@ -1,0 +1,43 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Api package",
+  "type": "module",
+  "main": "./dist/server.js",
+  "scripts": {
+    "build": "NODE_ENV=production tsc",
+    "start": "node ./dist/server.js",
+    "dev": "NODE_ENV=development tsx watch ./src/server.ts tests",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write \"**/*.{ts}\"",
+    "postinstall": "pnpx husky install"
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=16.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.1",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@types/node": "^18.7.13",
+    "husky": "^8.0.0",
+    "pino-pretty": "^9.1.0",
+    "ts-standard": "^11.0.0",
+    "tsup": "^6.2.3",
+    "typescript": "^4.8.2",
+    "vitest": "^0.22.1"
+  },
+  "dependencies": {
+    "@fastify/autoload": "^5.2.0",
+    "@fastify/cors": "^8.1.0",
+    "@fastify/sensible": "^5.1.1",
+    "@fastify/type-provider-typebox": "^2.3.0",
+    "@sinclair/typebox": "^0.24.28",
+    "env-schema": "^5.0.0",
+    "fastify": "^4.5.3",
+    "fastify-plugin": "^4.2.1",
+    "ts-toolbelt": "^9.6.0",
+    "tsx": "^3.8.2"
+  }
+}
